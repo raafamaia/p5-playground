@@ -38,11 +38,11 @@ function bounce() {
 function display() {
     stroke(255);
     strokeWeight(5);
-    noFill();
+    fill(random(255), 0, random(255))
     ellipse(ball.x, ball.y, ball.size);
 }
 
 function mousePressed()
 {
-    ball.speedX += 10;   
+    ball.speedX += 10;
 }
