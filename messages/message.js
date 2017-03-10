@@ -24,7 +24,7 @@ function Message(word, m, x, y){
 // or A = F / M
 Message.prototype.applyForce = function(force) {
   var f = p5.Vector.div(force,this.mass);
-  this.acceleration.add(f);
+  this.acceleration.add(f); 
 };
   
 Message.prototype.update = function() {

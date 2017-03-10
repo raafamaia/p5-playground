@@ -7,12 +7,13 @@ var currentIndexWord = 0;
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    
     currentPhrase = phrases[0];
 }
 
 function draw() {
     background(0);
+    title();
+    
     
     for(let message of messages){
         // Gravity is scaled by mass here!
@@ -53,6 +54,13 @@ function mousePressed(){
 
 function reset(){
      messages=[];
+}
+
+function title(){
+    textSize(40);
+    fill(255);
+    noStroke();
+    text("CLICK TO SEE MESSAGES", window.innerWidth / 4, 30)
 }
 
 
