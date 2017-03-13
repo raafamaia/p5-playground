@@ -1,5 +1,6 @@
 var messages = [];
-var phrases = [["MANDA", "NUDES"], ["OI", "VAMO", "BEJA?"], ["COMO", "VAI", "VOSE", "CHEROSA?"], ["PAGUE", "SUAS", "APOSTAS", "PARSA"]];
+var phrases = [["MANDA", "NUDES"], ["COMO", "VAI", "VOSE", "CHEROSA?"], ["OI", "VAMO", "BEJA?"], ["CASA", "COM", "MIGO?"]];
+// var phrases = [["CASA", "COM", "MIGO?"]];
 
 var currentPhrase = [];
 var currentIndexPhrase = 0;
@@ -14,17 +15,17 @@ function draw() {
     background(0);
     title();
     
-    
-    for(let message of messages){
+    for(var index = 0; index < messages.length; index++){
+    //for(let message of messages){
         // Gravity is scaled by mass here!
-        var gravity = createVector(0, 0.1 * message.mass);
+        var gravity = createVector(0, 0.1 * messages[index].mass);
         // Apply gravity
-        message.applyForce(gravity);
+        messages[index].applyForce(gravity);
 
         // Update and display
-        message.update();
-        message.display();
-        message.checkEdges();
+        messages[index].update();
+        messages[index].display();
+        messages[index].checkEdges();
     }
 }
 
@@ -47,7 +48,7 @@ function mousePressed(){
         currentPhrase = phrases[currentIndexPhrase];
     }
     
-    messages.push(new Message(currentPhrase[currentIndexWord], random(0.5, 3), mouseX, mouseY));
+    messages.push(new Message(currentPhrase[currentIndexWord], random(3, 8), mouseX, mouseY));
     
     currentIndexWord += 1;
 }

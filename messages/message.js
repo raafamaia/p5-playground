@@ -45,7 +45,7 @@ Message.prototype.display = function() {
 Message.prototype.checkEdges = function() {
   if (this.position.y > (height - this.mass*8)) {
     // A little dampening when hitting the bottom
-    this.velocity.y *= -0.9;
+    this.velocity.y *= -0.4;
     this.position.y = (height - this.mass*8);
   }
 };
