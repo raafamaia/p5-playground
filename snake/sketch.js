@@ -5,6 +5,8 @@ var imgHead;
 var imgBody;
 var imgFood;
 
+var previous_key;
+
 function preload(){
     //imgHead = loadImage("assets/head.jpg");
     //imgFood = loadImage("assets/cupcake.png");
@@ -48,16 +50,28 @@ function keyPressed(){
     
     switch (keyCode) {
         case UP_ARROW:
-            snake.dir(0, -1);
+            if(previous_key !== DOWN_ARROW){
+                previous_key = keyCode;
+                snake.dir(0, -1);
+            }
             break;
         case DOWN_ARROW:
-            snake.dir(0, 1);
+            if(previous_key !== UP_ARROW){
+                previous_key = keyCode;
+                snake.dir(0, 1);
+            }
             break;
         case LEFT_ARROW:
-            snake.dir(-1, 0);
+            if(previous_key !== RIGHT_ARROW){
+                previous_key = keyCode;
+                snake.dir(-1, 0);
+            }
             break;
         case RIGHT_ARROW:
-            snake.dir(1, 0);
+            if(previous_key !== LEFT_ARROW){
+                previous_key = keyCode;
+                snake.dir(1, 0);
+            }
             break;
         default:
             // code

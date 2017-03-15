@@ -16,6 +16,8 @@ var Snake = function(scl, imgHead, imgBody){
             
             var d = dist(this.x, this.y, pos.x, pos.y);
             if(d < 30){
+                this.x = 0;
+                this.y = 0;
                 this.total = 0;
                 this.tail = [];
             }
