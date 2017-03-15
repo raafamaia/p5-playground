@@ -4,6 +4,7 @@ var scl;
 var imgHead;
 var imgBody;
 var imgFood;
+var previousKey;
 
 function preload(){
     //imgHead = loadImage("assets/head.jpg");
@@ -51,16 +52,28 @@ function keyPressed(){
     
     switch (keyCode) {
         case UP_ARROW:
-            snake.dir(0, -1);
+            if(previousKey !== DOWN_ARROW){
+                previousKey = keyCode;
+                snake.dir(0, -1);
+            }
             break;
         case DOWN_ARROW:
-            snake.dir(0, 1);
+            if(previousKey !== UP_ARROW){
+                previousKey = keyCode;
+                snake.dir(0, 1);
+            }
             break;
         case LEFT_ARROW:
-            snake.dir(-1, 0);
+            if(previousKey !== RIGHT_ARROW){
+                previousKey = keyCode;
+                snake.dir(-1, 0);
+            }
             break;
         case RIGHT_ARROW:
-            snake.dir(1, 0);
+            if(previousKey !== LEFT_ARROW){
+                previousKey = keyCode;
+                snake.dir(1, 0);
+            }
             break;
         default:
             // code
