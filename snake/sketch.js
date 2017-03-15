@@ -58,6 +58,7 @@ function keyPressed(){
             }
             break;
         case DOWN_ARROW:
+
             if(previousKey !== UP_ARROW){
                 previousKey = keyCode;
                 snake.dir(0, 1);
