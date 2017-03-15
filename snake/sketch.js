@@ -27,7 +27,10 @@ function setup() {
     food = new Food(scl, imgFood);
     food.pickLocation();
     
-    frameRate(5);
+    frameRate(3);
+    
+    console.log(this.innerWidth);
+    console.log(this.innerHeight);
 }
 
 function draw() {

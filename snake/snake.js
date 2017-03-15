@@ -32,11 +32,19 @@ var Snake = function(scl, imgHead, imgBody){
         }
         this.tail[this.total - 1] = createVector(this.x, this.y);
         
-        this.x += this.speedX * this.scl;
-        this.y += this.speedY * this.scl;
+        var nextX = this.x + (this.speedX * this.scl);
+        var nextY = this.y + (this.speedY * this.scl);
         
-        this.x = constrain(this.x, 0, width - this.scl);
-        this.y = constrain(this.y, 0, height - this.scl);
+        var constX = constrain(nextX, 0, floor(width - this.scl));
+        var constY = constrain(nextY, 0, floor(height - this.scl));
+        
+        if(!(nextX < width && nextX > width - this.scl) && nextX >= 0) {
+            this.x = nextX;
+        }
+        
+        if(!(nextY < height && nextY > height - this.scl) && nextY >= 0) {
+            this.y = nextY;
+        }
     };
     
     this.show = function(){
