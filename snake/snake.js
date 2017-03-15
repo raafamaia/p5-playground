@@ -1,11 +1,12 @@
-var Snake = function(scl, img){
+var Snake = function(scl, imgHead, imgBody){
     this.x = 0;
     this.y = 0;
     this.speedX = 1;
     this.speedY = 0;
     this.col = color(255);
     this.scl = scl;
-    this.img = img;
+    this.imgHead = imgHead;
+    this.imgBody = imgBody;
     this.total = 0;
     this.tail = [];
     
@@ -39,7 +40,6 @@ var Snake = function(scl, img){
     };
     
     this.show = function(){
-        image(this.img, this.x, this.y, this.scl, this.scl);
         
         //noFill();
         //strokeWeight(1);
@@ -49,11 +49,11 @@ var Snake = function(scl, img){
         
         for(var i = 0; i < this.tail.length; i++){
             //rect(this.tail[i].x, this.tail[i].y, this.scl, this.scl);
-            image(this.img, this.tail[i].x, this.tail[i].y, this.scl, this.scl);
+            image(this.imgBody, this.tail[i].x, this.tail[i].y, this.scl, this.scl);
         }
         
         //rect(this.x, this.y, this.scl, this.scl);
-        image(this.img, this.x, this.y, this.scl, this.scl);
+        image(this.imgHead, this.x, this.y, this.scl, this.scl);
     };
     
     this.dir = function(x, y){

@@ -1,12 +1,19 @@
 var snake;
 var food;
 var scl;
-var imgHead; 
+var imgHead;
+var imgBody;
 var imgFood;
 
 function preload(){
-    imgHead = loadImage("assets/head.jpg");
-    imgFood = loadImage("assets/cupcake.png");
+    //imgHead = loadImage("assets/head.jpg");
+    //imgFood = loadImage("assets/cupcake.png");
+    
+    //Luiggi Version
+    imgHead = loadImage("assets/luiggi/luiggi.png");
+    imgBody = loadImage("assets/luiggi/yoshi.png");
+    imgFood = loadImage("assets/luiggi/mush.ico");
+    
 }
 
 function setup() {
@@ -15,7 +22,7 @@ function setup() {
     scl = 60;
     speed = 2;
     
-    snake = new Snake(scl, imgHead);
+    snake = new Snake(scl, imgHead, imgBody);
     
     food = new Food(scl, imgFood);
     food.pickLocation();
