@@ -40,12 +40,23 @@ var Snake = function(scl, imgHead, imgBody){
         var constX = constrain(nextX, 0, floor(width - this.scl));
         var constY = constrain(nextY, 0, floor(height - this.scl));
         
-        if(!(nextX < width && nextX > width - this.scl) && nextX >= 0) {
+        var rows = floor(width / this.scl);
+        var cols = floor(height / this.scl);
+        
+        if(nextX < 0){
+            this.x = rows * this.scl;
+        } else if(!(nextX < width && nextX > width - this.scl) && nextX >= 0) {
             this.x = nextX;
+        } else {
+            this.x = 0;
         }
         
-        if(!(nextY < height && nextY > height - this.scl) && nextY >= 0) {
+        if(nextY < 0){
+            this.y = cols * this.scl;
+        } else if(!(nextY < height && nextY > height - this.scl) && nextY >= 0) {
             this.y = nextY;
+        } else {
+            this.y = 0;
         }
     };
     
