@@ -4,7 +4,8 @@ var scl;
 var imgHead;
 var imgBody;
 var imgFood;
-var previousKey;
+
+var previous_key;
 
 function preload(){
     //imgHead = loadImage("assets/head.jpg");
@@ -20,18 +21,15 @@ function preload(){
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     
-    scl = 60;
-    speed = 2;
+    scl = 100;
+    speed = 1;
     
     snake = new Snake(scl, imgHead, imgBody);
     
     food = new Food(scl, imgFood);
     food.pickLocation();
     
-    frameRate(3);
-    
-    console.log(this.innerWidth);
-    console.log(this.innerHeight);
+    frameRate(7);
 }
 
 function draw() {
@@ -52,27 +50,26 @@ function keyPressed(){
     
     switch (keyCode) {
         case UP_ARROW:
-            if(previousKey !== DOWN_ARROW){
-                previousKey = keyCode;
+            if(previous_key !== DOWN_ARROW){
+                previous_key = keyCode;
                 snake.dir(0, -1);
             }
             break;
         case DOWN_ARROW:
-
-            if(previousKey !== UP_ARROW){
-                previousKey = keyCode;
+            if(previous_key !== UP_ARROW){
+                previous_key = keyCode;
                 snake.dir(0, 1);
             }
             break;
         case LEFT_ARROW:
-            if(previousKey !== RIGHT_ARROW){
-                previousKey = keyCode;
+            if(previous_key !== RIGHT_ARROW){
+                previous_key = keyCode;
                 snake.dir(-1, 0);
             }
             break;
         case RIGHT_ARROW:
-            if(previousKey !== LEFT_ARROW){
-                previousKey = keyCode;
+            if(previous_key !== LEFT_ARROW){
+                previous_key = keyCode;
                 snake.dir(1, 0);
             }
             break;
