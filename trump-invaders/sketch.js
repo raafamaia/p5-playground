@@ -14,10 +14,11 @@ var direction = 1;
 var shift = false;
 
 function preload(){
-     trumpImg = loadImage("assets/luiggi.png");
-     brickImg = loadImage("assets/yoshi.png");
-     enemyImg = loadImage("assets/mush.ico");
-     bgImg = loadImage("assets/bg.png");
+     trumpImg = loadImage("assets/trump.png");
+     brickImg = loadImage("assets/brick.png");
+     enemyImg = loadImage("assets/juan.ico");
+
+    //bgImg = loadImage("assets/bg.png");
 }
 
 function setup() {
