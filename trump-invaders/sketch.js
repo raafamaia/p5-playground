@@ -16,18 +16,18 @@ var shift = false;
 function preload(){
      trumpImg = loadImage("assets/trump.png");
      brickImg = loadImage("assets/brick.png");
-     enemyImg = loadImage("assets/juan.ico");
+     enemyImg = loadImage("assets/juan.png");
 
     //bgImg = loadImage("assets/bg.png");
 }
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    scl = 50;
+    scl = 100;
     
     trump = new Trump(scl, trumpImg);
     for(var i = 0; i < 7; i++){
-        enemies.push(new Enemy(i * scl + scl, 20, scl, enemyImg));
+        enemies.push(new Enemy(i * scl + scl + 50, 80, scl, enemyImg));
     }
 }
 
@@ -101,7 +101,7 @@ function keyPressed() {
             trump.dir(1);
             break;
         case SPACE:
-            var brick = new Brick(trump.x, trump.y - trump.scl / 2, scl, brickImg);
+            var brick = new Brick(trump.x, trump.y - trump.height / 2, scl, brickImg);
             bricks.push(brick);
     }
     

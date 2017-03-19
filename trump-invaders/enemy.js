@@ -6,10 +6,13 @@ var Enemy = function(x, y, scl, img) {
     this.scl = scl / 2;
     this.speed = 1;
     
+    this.width = map(this.scl, 0, this.scl, 0, 78);
+    this.height = map(this.scl, 0, this.scl, 0, 128);
+    
     
     this.show = function () {
         imageMode(CENTER);
-        image(this.img, this.x, this.y, this.scl, this.scl);
+        image(this.img, this.x, this.y, this.width, this.height);
     }
     
     this.move = function(dir) {

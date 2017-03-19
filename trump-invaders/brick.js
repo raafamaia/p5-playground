@@ -16,7 +16,7 @@ var Brick = function(x, y, scl, img) {
     }
     
     this.hits = function(obj) {
-        var d = dist(this.x, this.y, obj.x, obj.y);
+        var d = dist(this.x, this.y, obj.x, obj.y + obj.height / 2);
         
         return (d < (this.scl /2) + (obj.scl / 2));
     }
